@@ -86,6 +86,7 @@ ynh_setup_source --dest_dir="$final_path"
 chmod 750 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
+chmod -R 755 "$final_path/application/config"
 
 #=================================================
 # NGINX CONFIGURATION
@@ -110,7 +111,7 @@ ynh_script_progression --message="Adding a configuration file..." --time --weigh
 
 ynh_add_config --template="../conf/database.php" --destination="$final_path/application/config/database.php"
 
-chmod 400 "$final_path/application/config/database.php"
+chmod 755 "$final_path/application/config/database.php"
 chown $app:$app "$final_path/application/config/database.php"
 
 #=================================================
