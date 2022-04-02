@@ -113,7 +113,6 @@ ynh_add_config --template="../conf/database.php" --destination="$final_path/appl
 chmod 400 "$final_path/application/config/database.php"
 chown $app:$app "$final_path/application/config/database.php"
 
-
 #=================================================
 # GENERIC FINALIZATION
 #=================================================
